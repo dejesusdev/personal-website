@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %} <!-- Add this line to load the static tag library -->
+
+{% block title %}Photography{% endblock %}
+
+{% block content %}
+<div class="ghs-container">
+    <div class="ghs-section">
+        <p>
+            Photography is a hobby I truly love—it’s my way of 
+            capturing the little moments in life that you never get back. 
+            Whether it’s a quiet smile, a family gathering, or just a simple 
+            afternoon with my daughter, every photo holds a memory, a 
+            feeling, and a connection. I especially love photographing my 
+            daughter—she’s so naturally photogenic, and it brings me joy to 
+            freeze those beautiful moments in time.
+        </p>
+    </div>
+</div>
+
+<!-- Simple Photo Gallery -->
+<div class="photo-gallery">
+    {% for filename in photo_filenames %}
+        <img src="{% static 'images/' %}{{ filename }}" alt="Photo Project {{ forloop.counter }}">
+    {% endfor %}
+</div>
+{% endblock %}

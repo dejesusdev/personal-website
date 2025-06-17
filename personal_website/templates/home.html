@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %} <!-- Add this line to load the static tag library -->
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="home-container">
+    <div class="intro-section">
+        <h1>Welcome to My Website</h1>
+        <p>
+            Hi, I’m making the leap from a career in construction 
+            to the exciting world of information technology and 
+            programming. My passion for building and creating is what 
+            first drew me to construction, where I learned the value of 
+            project management, problem-solving, and paying close attention 
+            to detail. Those experiences gave me a strong foundation—and now 
+            I’m channeling that same drive into tech. I’m diving into 
+            coding and software development with the goal of building creative, 
+            functional digital solutions, just like I once built and improved 
+            physical spaces. It’s a big shift, but it feels like the natural next step.
+        </p>
+        <img src="{% static 'images/photo1.jpg' %}" alt="Photo of me" class="intro-section img">
+    </div>
+</div>
+{% endblock %}

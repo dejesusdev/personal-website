@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Server Error{% endblock %}
+
+{% block content %}
+    <div style="text-align: center; margin: 100px 0;">
+        <h1>500 - Server Error</h1>
+        <p>Sorry, something went wrong on our end. We’re working to fix it.</p>
+        <a href="{% url 'home' %}" style="color: #007bff; text-decoration: underline;">Return Home</a>
+    </div>
+{% endblock %}

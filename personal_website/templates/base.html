@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Website{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="name">
+            {% block topbar_logo %}
+            <!-- Default: no logo -->
+            {% endblock %}
+            {% block topbar_name %}
+            Giovanni Dejesus
+            {% endblock %}
+        </div>
+        <div class="social-icons">
+            {% block social_icons %}
+            <a href="https://www.linkedin.com/in/giovanni-dejesus" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        <a href="https://drive.google.com/uc?export=download&id=15MEiBnQMHGRyQVRk-PWviBfAgiDyx7-J" target="_blank" title="View Resume">
+                <i class="fas fa-file-download"></i>
+                <span class="tooltip-text">Resume</span>
+            </a>
+            {% endblock %}
+        </div>
+    </div>
+    <!-- Navigation Menu -->
+    <div class="nav-container">
+        <div class="nav-icon">☰</div>
+        <ul class="nav-menu">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'tech' %}">Tech</a></li>
+            <li><a href="{% url 'ghs' %}">Gio's Handyman Services</a></li>
+            <li><a href="{% url 'photography' %}">Photography</a></li>
+        </ul>
+    </div>
+
+    <!-- Page Content -->
+    {% block content %}{% endblock %}
+</body>
+</html>

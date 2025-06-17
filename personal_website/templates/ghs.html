@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block topbar_logo %}
+    <img src="{% static 'images/handyman_logo.png' %}" alt="Handyman Logo" class="handyman-logo" style="height:24px;vertical-align:middle;margin-right:8px;">
+{% endblock %}
+
+{% block topbar_name %}
+    Gio's Handyman Services
+{% endblock %}
+
+{% block social_icons %}
+    <a href="https://www.facebook.com/Gioshandymanservices" target="_blank" title="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/gioshandymanservices/" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+{% endblock %}
+
+{% block content %}
+<div class="ghs-container">
+    <div class="ghs-section">
+        <p>
+            Welcome to Gio’s Handyman Services! These photos highlight some of the home 
+            renovations, repairs, and custom builds I’ve completed over the years. Running 
+            my own business taught me more than just hands-on skills—I learned how to manage 
+            materials, lead teams of laborers and subcontractors, and navigate tight 
+            deadlines with realistic planning. The same dedication, problem-solving, and 
+            attention to detail that helped me succeed in construction are now driving my 
+            journey into the IT world. As I shift into coding, cybersecurity, and networking, 
+            I carry those lessons with me into every new challenge
+        </p>
+    </div>
+</div>
+
+<!-- Simple Photo Gallery -->
+<div class="ghs-gallery">
+    {% for filename in photo_filenames %}
+        <img src="{% static 'images/' %}{{ filename }}" alt="GHS Project {{ forloop.counter }}">
+    {% endfor %}
+</div>
+{% endblock %}
