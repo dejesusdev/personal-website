@@ -147,36 +147,3 @@ SECURE_SSL_REDIRECT   = True          # auto-redirect http → https
 SESSION_COOKIE_SECURE = True          # session cookies only sent over https
 CSRF_COOKIE_SECURE    = True          # CSRF cookie only sent over https
 SECURE_HSTS_SECONDS   = 31536000      # tell browsers to prefer https for 1 year
-
-# settings.py  (add near the bottom)
-
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-
-    "handlers": {
-        "console": {              # writes to stdout / stderr
-            "class": "logging.StreamHandler",
-        },
-    },
-
-    "root": {                     # catch-all for anything without a logger
-        "handlers": ["console"],
-        "level": "INFO",
-    },
-
-    "loggers": {
-        # Django will log every server error (HTTP 500) here
-        "django.request": {
-            "handlers": ["console"],
-            "level": "ERROR",
-            "propagate": False,
-        },
-        # Optional: turn this up if you want ORM queries etc.
-        # "django.db.backends": {
-        #     "handlers": ["console"],
-        #     "level": "DEBUG",
-        #     "propagate": False,
-        # },
-    },
-}
