@@ -29,6 +29,10 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['giovannidejesus.dev', 'www.giovannidejesus.dev', '127.0.0.1']
 
+import os
+render_host = os.getenv("RENDER_EXTERNAL_HOSTNAME")   # set by Render at deploy time
+if render_host:
+    ALLOWED_HOSTS.append(render_host)
 
 # Application definition
 
