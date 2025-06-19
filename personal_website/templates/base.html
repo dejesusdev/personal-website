@@ -41,7 +41,17 @@
             <li><a href="{% url 'photography' %}">Photography</a></li>
         </ul>
     </div>
+<script>
+/* Toggle the mobile menu */
+document.addEventListener("DOMContentLoaded", function () {
+    const navIcon  = document.querySelector(".nav-icon");
+    const navMenu  = document.querySelector(".nav-menu");
 
+    navIcon.addEventListener("click", () => {
+        navMenu.classList.toggle("open");   // CSS will slide it in/out
+    });
+});
+</script>
     <!-- Page Content -->
     {% block content %}{% endblock %}
 </body>

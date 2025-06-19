@@ -345,3 +345,62 @@ body {
     visibility: visible;
     opacity: 1;
 }
+
+/* ---------- Responsive Breakpoints ---------- */
+
+/* Tablets / small laptops */
+@media (max-width: 768px) {
+    /* convert two‑column grids to single‑column */
+    .intro-section,
+    .ghs-section,
+    .tech-section {
+        grid-template-columns: 1fr;
+    }
+
+    /* narrow content paddings/margins */
+    .home-container,
+    .ghs-container,
+    .tech-intro-container,
+    .blog-post {
+        margin: 40px 16px;
+        padding: 16px;
+    }
+
+    /* reduce gallery columns */
+    .photo-gallery,
+    .ghs-gallery {
+        column-count: 2;
+    }
+
+    /* make nav icon slightly smaller */
+    .nav-icon {
+        font-size: 22px;
+        padding: 8px;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    /* single‑column masonry galleries */
+    .photo-gallery,
+    .ghs-gallery {
+        column-count: 1;
+    }
+
+    /* images scale full width */
+    img,
+    .intro-section img,
+    .blog-post img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* tighter container spacing */
+    .home-container,
+    .ghs-container,
+    .tech-intro-container,
+    .blog-post {
+        margin: 24px 12px;
+        padding: 12px;
+    }
+}
